@@ -1,9 +1,14 @@
 let degwade;
 
+var x, y;
+
 function setup() {
  	createCanvas(windowWidth,windowHeight);	
 	
-	degwade = linearGradiant(width, height, 240, 20, 50, 75, 50, 200);
+	degwade = linearGradiant(width, height, 240, 40, 50, 50, 255, 255);
+	
+	x = -2000; 		//position en largeur
+    y = height / 8; //position en hauteur
 }
 
 function draw() {
@@ -67,18 +72,17 @@ function draw() {
 	rect(0,0,40,30);
 	pop();
 	
+	push();				//chapeau
+	translate(0,-190);
+	fill(255,0,0);
+	triangle(0,0,100,20,20,90);
+	pop();
+	
 	push();				//chapeau r
 	translate(0,0);
 	fill(255,0,0);
 	triangle(-90,-40,0,-190,90,-40);
-	pop();
-	
-	push();				//chapeau
-	translate(0,-190);
-	fill(255,0,0);
-	triangle(0,0,60,-20,40,20);
-	pop();
-	
+	pop()
 	
 	push();				//chapeau b
 	translate(-100,-40);
@@ -86,13 +90,24 @@ function draw() {
 	rect(0,0,200,30);
 	pop();
 	
-	push();				//texte
-	textAlign(CENTER, CENTER);
+	push();				//boule chapeau
 	fill(255);
-	textSize(50);
-	textStyle(ITALIC);
-	text("Joyeuses fêtes!",0,-70);
+	circle(100,-160,50);
 	pop();
+					
+	//textAlign(CENTER, CENTER);
+	
+	push();
+	fill(255);
+  	textSize(150);
+  	textStyle(ITALIC);	text("Joyeuses fêtes !", x, y);
+	pop();
+  
+  x = x - 6 ; 		// Moving up at a constant speed
+  
+  if (x < -2000) { 	// Reset to the left
+    x = width;
+  }
 }
 
 function linearGradiant(w, h, b1, v1, r1, b2, v2, r2){
