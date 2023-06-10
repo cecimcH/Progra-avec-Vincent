@@ -97,11 +97,9 @@ function draw() {
 					
 	//textAlign(CENTER, CENTER);
 	
-	push();
 	fill(255);
   	textSize(150);
   	textStyle(ITALIC);	text("Joyeuses fêtes !", x, y);
-	pop();
   
   x = x - 6 ; 		// Moving up at a constant speed
   

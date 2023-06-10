@@ -1,9 +1,11 @@
-function setup() { 								// put setup code here
+function setup() { 		// put setup code here
+	
 	createCanvas(windowWidth,windowHeight); 	//création d'un fond qui prend tout l'écran	
-	rectMode(CENTER);							//rectangle au centre de l'écran
+	rectMode(CENTER);							//les coordonnées x et y sont calculées par rapport au centre du rectangle
+	
 }
 
-function draw() { 					// put drawing code here
+function draw() { 		// put drawing code here
 	
 	background(125,25,175);				//fond mauve
 	
